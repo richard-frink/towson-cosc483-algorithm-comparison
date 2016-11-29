@@ -54,16 +54,19 @@ namespace SelectionAlgorithms
         {
             //Not complete, hecking together a way to check the validity of the sorting method
             printArray(array);
-            Quicksort(array, 0, array.Length - 1);
+
+            Random rand = new Random();
+            Quicksort(array, 0, array.Length - 1, rand);
+
             Console.WriteLine();
             printArray(array);
         }
 
         //This is a working quicksort algorithm, need to implement the pivot as a random pivot and not the middle of the array
-        public static void Quicksort(IComparable[] elements, int left, int right)
+        public static void Quicksort(IComparable[] elements, int left, int right, Random rand)
         {
             int i = left, j = right;
-            IComparable pivot = elements[(left + right) / 2];
+            IComparable pivot = elements[rand.Next(left, right)];
 
             while (i <= j)
             {
@@ -92,17 +95,18 @@ namespace SelectionAlgorithms
             // Recursive calls
             if (left < j)
             {
-                Quicksort(elements, left, j);
+                Quicksort(elements, left, j, rand);
             }
 
             if (i < right)
             {
-                Quicksort(elements, i, right);
+                Quicksort(elements, i, right, rand);
             }
         }
 
 
-        //This is just a makeshift way to print the arrays, it is in no way clean at all but i need to print stuff to make sure it is working
+        //This is just a makeshift way to print the arrays, it is in no way clean at all
+        //but i need to print stuff to make sure sorting is working
         public static void printArray(IComparable[] array)
         {
             for(int i = 0; i < array.Length; i++)
