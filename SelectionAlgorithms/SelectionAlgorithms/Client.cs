@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace SelectionAlgorithms
 {
-    class Program
+    class Client
     {
         static void Main(string[] args)
         {
+            //will use this to easily generate new array objects of various sizes with random elements
+            ArrayFactory arrayCreator = new ArrayFactory();
+
+
         }
     }
 }
