@@ -21,36 +21,56 @@ namespace SelectionAlgorithms
 
             //method is newArray(size of array, range of array (0-integer input) )
             //IComparable[] is just an array of elements, it is convenient to use for comparing everything
-            IComparable[] test1 = arrayCreator.newArray(10000, 10000);
+            IComparable[] test1 = arrayCreator.newArray(1000, 1000);
 
             //here will be tons of running of all of the algorithms and outputs of times and such
 
 
-            //example os stopwatch usage
+            //example of stopwatch usage
             stopwatch.Start();
             RandQuickSelection(test1, 117);
             stopwatch.Stop();
             lastTestElapsed = stopwatch.ElapsedMilliseconds;
-
+            
+            Console.WriteLine(Environment.NewLine + lastTestElapsed);
 
             //This readline keeps the console from closing at the end
             Console.ReadLine();
         }
 
         //This is the Deterministic version of Selection sort
-        public static void DetSelection(IComparable[] array, int key)
+        public static void DetSelection(IComparable[] array, IComparable key)
         {
             //  http://www.ics.uci.edu/~eppstein/161/960130.html
+            //  http://www.columbia.edu/~cs2035/courses/csor4231.F11/dselect.pdf
+
+
+            //1 if (n = 1)
+            //2 return A[1]
+            //3 p = median(A)
+            //4
+            //5
+            //6 L = { x ∈ A: x ≤ p}
+            //  H = { x ∈ A: x > p}
+            //7 if i ≤ | L |
+            //8 Select(L, i, | L |)
+            //9 else Select(H, i − | L |, | H |)
+        }
+
+        //actual method to do the deterministic selection
+        public static IComparable DetSelect(IComparable[], int i, IComparable n)
+        {
+            return 1;
         }
 
         //This is the Randomized version of Selection sort
-        public static void RandSelection(IComparable[] array, int key)
+        public static void RandSelection(IComparable[] array, IComparable key)
         {
             //  
         }
 
         //This is where we use randomized quicksort to do the sorting and then select the element we need
-        public static void RandQuickSelection(IComparable[] array, int key)
+        public static void RandQuickSelection(IComparable[] array, IComparable key)
         {
             //Not complete, hecking together a way to check the validity of the sorting method
             printArray(array);
