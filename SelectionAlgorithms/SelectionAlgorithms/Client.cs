@@ -32,33 +32,33 @@ namespace SelectionAlgorithms
 
             //These hold the values of the results for sets of tests
             //one for each tested size of array
-            List<long> results1 = new List<long>();
-            List<long> results2 = new List<long>();
-            List<long> results3 = new List<long>();
-            List<long> results4 = new List<long>();
-            List<long> results5 = new List<long>();
-            List<long> results6 = new List<long>();
-            List<long> results7 = new List<long>();
-            List<long> results8 = new List<long>();
-            List<long> results9 = new List<long>();
+            List<int> results1 = new List<int>();
+            List<int> results2 = new List<int>();
+            List<int> results3 = new List<int>();
+            List<int> results4 = new List<int>();
+            List<int> results5 = new List<int>();
+            List<int> results6 = new List<int>();
+            List<int> results7 = new List<int>();
+            List<int> results8 = new List<int>();
+            List<int> results9 = new List<int>();
 
             //
             // Deterministic Select Algo Testing
             //
             // DetSelection()
             //
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 1; i++)
             {
-                test1 = arrayCreator.newArray(10000, 10000); // 10,000
-                test2 = arrayCreator.newArray(1000000, 1000000); // 1,000,000
-                test3 = arrayCreator.newArray(10000000, 10000000); // 10,000,000
+                test1 = arrayCreator.newArray(10000, 10000); // 1,000
+                test2 = arrayCreator.newArray(1000000, 1000000); // 100,000
+                test3 = arrayCreator.newArray(10000000, 10000000); // 1,000,000
 
                 stopwatch.Start();
                 median = DetSelection(test1);
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results1.Add(lastTestElapsed);
+                results1.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "A" + Environment.NewLine
@@ -75,7 +75,7 @@ namespace SelectionAlgorithms
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results2.Add(lastTestElapsed);
+                results2.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "B" + Environment.NewLine
@@ -92,7 +92,7 @@ namespace SelectionAlgorithms
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results3.Add(lastTestElapsed);
+                results3.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "C" + Environment.NewLine
@@ -110,7 +110,7 @@ namespace SelectionAlgorithms
             //
             // RandSelection()
             //
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 1; i++)
             {
                 test1 = arrayCreator.newArray(10000, 10000); // 10,000
                 test2 = arrayCreator.newArray(1000000, 1000000); // 1,000,000
@@ -121,7 +121,7 @@ namespace SelectionAlgorithms
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results4.Add(lastTestElapsed);
+                results4.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "A" + Environment.NewLine
@@ -138,7 +138,7 @@ namespace SelectionAlgorithms
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results5.Add(lastTestElapsed);
+                results5.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "B" + Environment.NewLine
@@ -155,7 +155,7 @@ namespace SelectionAlgorithms
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results6.Add(lastTestElapsed);
+                results6.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "C" + Environment.NewLine
@@ -174,16 +174,16 @@ namespace SelectionAlgorithms
             //
             for (int i = 0; i < 30; i++)
             {
-                test1 = arrayCreator.newArray(10000, 10000); // 10,000
-                test2 = arrayCreator.newArray(1000000, 1000000); // 1,000,000
-                test3 = arrayCreator.newArray(10000000, 10000000); // 10,000,000
+                test1 = arrayCreator.newArray(1000, 1000); // 10,000
+                test2 = arrayCreator.newArray(100000, 100000); // 1,000,000
+                test3 = arrayCreator.newArray(1000000, 1000000); // 10,000,000
 
                 stopwatch.Start();
                 median = RandQuickSelection(test1);
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results7.Add(lastTestElapsed);
+                results7.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "A" + Environment.NewLine
@@ -200,7 +200,7 @@ namespace SelectionAlgorithms
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results8.Add(lastTestElapsed);
+                results8.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "B" + Environment.NewLine
@@ -217,7 +217,7 @@ namespace SelectionAlgorithms
                 stopwatch.Stop();
                 lastTestElapsed = stopwatch.ElapsedMilliseconds;
                 stopwatch.Reset();
-                results9.Add(lastTestElapsed);
+                results9.Add((int)lastTestElapsed);
                 Console.WriteLine(Environment.NewLine
                                   + "---------------------------------------" + Environment.NewLine
                                   + "           Test " + (i + 1) + "C" + Environment.NewLine
@@ -343,30 +343,18 @@ namespace SelectionAlgorithms
         {
             Client.currentMethodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
 
-            //  http://www.ics.uci.edu/~eppstein/161/960130.html
-            //  http://www.columbia.edu/~cs2035/courses/csor4231.F11/dselect.pdf
-
-
-            //1 if (n = 1)
-            //2     return A[1]
-            //3 p = median(A)
-            //4
-            //5
-            //6 L = { x ∈ A: x ≤ p}
-            //  H = { x ∈ A: x > p}
-            //7 if i ≤ | L |
-            //8     Select(L, i, | L |)
-            //9 else Select(H, i − | L |, | H |)
-            
             return DetSelect(array, array.Length/2, array.Length);
         }
-        
+
         //actual method to do the deterministic selection
         //called by "DetSelection"
         public static int DetSelect(int[] array, int i, int size)
         {
-            if (size == 1)
-                return array[0];
+            if (size <= 50)
+            {
+                Array.Sort(array);
+                return array[size / 2];
+            }
 
             int p = findMedian(array);
 
@@ -388,8 +376,6 @@ namespace SelectionAlgorithms
         //starts the process of finding the median
         public static int findMedian(int[] array)
         {
-            int median = -1;
-
             List<int> medians = new List<int>();
 
             for (int i = 0; i < array.Length; i = i + 5)
@@ -397,9 +383,8 @@ namespace SelectionAlgorithms
 
             int[] temp = medians.ToArray();
             Array.Sort(temp);
-            median = temp[temp.Length / 2];
 
-            return median;
+            return temp[temp.Length / 2];
         }
 
         //handles the recursive calls to break the array down into lengths of 5 and returns a list of medians
@@ -409,11 +394,18 @@ namespace SelectionAlgorithms
             int[] temp = new int[5];
             for (int i = start; i < end; i++)
             {
+                if (i == array.Length)
+                {
+                    j = i - start;
+                    break;
+                }
                 temp[j] = array[i];
                 j++;
             }
             Array.Sort(temp);
-            medians.Add(temp[2]);
+            if (end < array.Length)
+                medians.Add(temp[2]);
+            else medians.Add(temp[j/2]);
         }
 
 
@@ -422,10 +414,36 @@ namespace SelectionAlgorithms
         public static int RandSelection(int[] array)
         {
             Client.currentMethodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
-            
-            return -1;
+
+            return RandSelect(array, array.Length / 2, array.Length);
         }
 
+        public static int RandSelect(int[] array, int i, int size)
+        {
+
+            if (size <= 10)
+            {
+                Array.Sort(array);
+                return array[size / 2];
+            }
+
+            Random rand = new Random();
+            int p = array[rand.Next(size/4,3*size/4)];
+
+            List<int> L = new List<int>();
+            List<int> H = new List<int>();
+
+            for (int x = 0; x < array.Length; x++)
+            {
+                if (array[x] >= p)
+                    H.Add(array[x]);
+                else L.Add(array[x]);
+            }
+
+            if (i <= L.Count)
+                return RandSelect(L.ToArray(), i, L.Count);
+            else return RandSelect(H.ToArray(), i - L.Count, H.Count);
+        }
 
 
         //This is where we use randomized quicksort to do the sorting and then select the element we need
@@ -482,7 +500,7 @@ namespace SelectionAlgorithms
 
         //This is just a makeshift way to print the arrays, it is in no way clean at all
         //but i need to print stuff to make sure sorting is working
-        public static void printArray(long[] array)
+        public static void printArray(int[] array)
         {
             for(int i = 0; i < array.Length; i++)
             {
