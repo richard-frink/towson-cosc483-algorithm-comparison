@@ -11,9 +11,9 @@ namespace SelectionAlgorithms
             rand = new Random();
         }
 
-        public IComparable[] newArray(int size, int max)
+        public int[] newArray(int size, int max)
         {
-            IComparable[] temp = new IComparable[size];
+            int[] temp = new int[size];
             for(int i = 0; i < size; i++)
             {
                 temp[i] = rand.Next(max + 1); //number from 0 to the specified number
