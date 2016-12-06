@@ -47,7 +47,7 @@ namespace SelectionAlgorithms
             //
             // DetSelection()
             //
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 30; i++)
             {
                 test1 = arrayCreator.newArray(10000, 10000); // 1,000
                 test2 = arrayCreator.newArray(1000000, 1000000); // 100,000
@@ -110,7 +110,7 @@ namespace SelectionAlgorithms
             //
             // RandSelection()
             //
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 30; i++)
             {
                 test1 = arrayCreator.newArray(10000, 10000); // 10,000
                 test2 = arrayCreator.newArray(1000000, 1000000); // 1,000,000
@@ -174,9 +174,9 @@ namespace SelectionAlgorithms
             //
             for (int i = 0; i < 30; i++)
             {
-                test1 = arrayCreator.newArray(1000, 1000); // 10,000
-                test2 = arrayCreator.newArray(100000, 100000); // 1,000,000
-                test3 = arrayCreator.newArray(1000000, 1000000); // 10,000,000
+                test1 = arrayCreator.newArray(10000, 10000); // 10,000
+                test2 = arrayCreator.newArray(1000000, 1000000); // 1,000,000
+                test3 = arrayCreator.newArray(10000000, 10000000); // 10,000,000
 
                 stopwatch.Start();
                 median = RandQuickSelection(test1);
@@ -414,11 +414,11 @@ namespace SelectionAlgorithms
         public static int RandSelection(int[] array)
         {
             Client.currentMethodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
-
-            return RandSelect(array, array.Length / 2, array.Length);
+            Random rand = new Random();
+            return RandSelect(array, array.Length / 2, array.Length, rand);
         }
 
-        public static int RandSelect(int[] array, int i, int size)
+        public static int RandSelect(int[] array, int i, int size, Random rand)
         {
 
             if (size <= 10)
@@ -426,8 +426,7 @@ namespace SelectionAlgorithms
                 Array.Sort(array);
                 return array[size / 2];
             }
-
-            Random rand = new Random();
+            
             int p = array[rand.Next(size/4,3*size/4)];
 
             List<int> L = new List<int>();
@@ -441,8 +440,8 @@ namespace SelectionAlgorithms
             }
 
             if (i <= L.Count)
-                return RandSelect(L.ToArray(), i, L.Count);
-            else return RandSelect(H.ToArray(), i - L.Count, H.Count);
+                return RandSelect(L.ToArray(), i, L.Count, rand);
+            else return RandSelect(H.ToArray(), i - L.Count, H.Count, rand);
         }
 
 
